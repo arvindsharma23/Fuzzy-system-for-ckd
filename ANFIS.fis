@@ -1,0 +1,66 @@
+[System]
+Name='ANFIS'
+Type='sugeno'
+Version=2.0
+NumInputs=5
+NumOutputs=1
+NumRules=0
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='GFR'
+Range=[0 100]
+NumMFs=6
+MF1='G5':'trimf',[-40 0 15]
+MF2='G4':'trimf',[13 22 29]
+MF3='G3b':'trimf',[28 35 44]
+MF4='G3a':'trimf',[42 50 59]
+MF5='G2':'trimf',[57 75 89]
+MF6='G1':'trimf',[88 100 140]
+
+[Input2]
+Name='PusCellinUrine'
+Range=[0 10]
+NumMFs=2
+MF1='Normal':'trimf',[-4 0 5]
+MF2='Abnormal':'trimf',[4 10 15]
+
+[Input3]
+Name='BUN'
+Range=[0 40]
+NumMFs=3
+MF1='Low':'trimf',[-16 0 8]
+MF2='Normal':'trimf',[4 14 24]
+MF3='High':'trimf',[22 40 56]
+
+[Input4]
+Name='Albumin'
+Range=[0 350]
+NumMFs=3
+MF1='A1':'trimf',[-140 0 30]
+MF2='A2':'trimf',[25 170 300]
+MF3='A3':'trimf',[290 350 490]
+
+[Input5]
+Name='SerumCreatinine'
+Range=[0 5]
+NumMFs=3
+MF1='Mild':'trimf',[-2 0 1.4]
+MF2='Moderate':'trimf',[1.2 1.9 2.4]
+MF3='Severe':'trimf',[2.2 5 8.59]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=5
+MF1='Stage1':'constant',[0]
+MF2='Stage2':'constant',[0.5]
+MF3='Stage3':'constant',[1]
+MF4='Stage4':'constant',[0]
+MF5='Stage5':'constant',[1]
+
+[Rules]
